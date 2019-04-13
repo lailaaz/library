@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'author'
 ]
 
 MIDDLEWARE = [
@@ -79,12 +81,19 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'library',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'Root.root',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -125,7 +134,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(os.path.dirname(__file__), "static")
 )
+MEDIA_ROOT = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
