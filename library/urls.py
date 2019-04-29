@@ -19,15 +19,19 @@ from django.contrib import admin
 
 from django.conf.urls import url, include
 from django.db import router
+from rest_framework.routers import DefaultRouter
+
+from author import views
 
 
-
-from author.views import AuthorViewset
+router = DefaultRouter()
+router.register(r'author', views.AuthorViewset)
 
 
 apiUrlPatterns = [
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^author/', AuthorViewset),
+    url('^author/', include(router.urls)),
+    # url(r'^author/', views.AuthorViewset),
 
 ]
 
