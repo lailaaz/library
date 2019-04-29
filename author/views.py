@@ -1,12 +1,11 @@
 from django.shortcuts import render
 
-from rest_framework import generics
+from rest_framework import generics, viewsets
 
 from author import serializers
 from author.models import Author
-from author.serializers import AuthorSerializer
 
 
-class AuthorViewset(generics.APIView):
+class AuthorViewset(viewsets.ModelViewSet):
     queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
+    serializer_class = serializers.AuthorSerializer
