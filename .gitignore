@@ -16,3 +16,7 @@ pubspec.lock
 doc/api/
 
 library/__pycache__/
+
+author/__pycache__/
+
+*.pyc
