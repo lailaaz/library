@@ -27,12 +27,12 @@ class Category(models.Model):
 
 
 class Book(models.Model):
-    category_id = models.ForeignKey(Category, blank=False)
+    category_id = models.ForeignKey(Category, blank=True)
     author_id =  models.ForeignKey(Author, blank=False)
     name = models.CharField(max_length=30, blank=False)
     price = models.FloatField(blank=False)
     author_percentage = models.IntegerField(blank=False, validators=[MinValueValidator(1), MaxValueValidator(100)])
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
     class Meta:
         db_table = 'book'
