@@ -26,6 +26,13 @@ from author import views
 
 router = DefaultRouter()
 router.register(r'author', views.AuthorViewset)
+router.register(r'category', views.CategoryViewset)
+router.register(r'book', views.BookViewset)
+router.register(r'branch', views.BranchViewset)
+router.register(r'branch_book_stock', views.BranchBookStockViewset)
+router.register(r'bill', views.BillViewset)
+router.register(r'invoice', views.InvoiceViewset)
+
 
 
 apiUrlPatterns = [
