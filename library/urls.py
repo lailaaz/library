@@ -31,7 +31,6 @@ router.register(r'author', views.AuthorViewset)
 apiUrlPatterns = [
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url('', include(router.urls)),
-    # url(r'^author/', views.AuthorViewset),
 
 ]
 

@@ -10,5 +10,5 @@ from author.models import Author
 class AuthorViewset(viewsets.ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = serializers.AuthorSerializer
-    permission_classes = IsAuthenticated
+    # permission_classes = IsAuthenticated
 
